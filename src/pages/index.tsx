@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { 
   Phone, 
   Truck, 
@@ -25,8 +26,9 @@ import {
   Image as ImageIcon
 } from 'lucide-react';
 
-function App() {
-  const [formData, setFormData] = useState({
+export default function Home() {
+
+    const [formData, setFormData] = useState({
     name: '',
     phone: '',
     message: ''
@@ -63,7 +65,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+<div className="min-h-screen bg-white">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-lg z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -178,7 +180,7 @@ function App() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
           <div className="text-center">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-              Trusted Packers & Movers in{' '}
+              Trusted Packers &amp; Movers in{' '}
               <span className="text-orange-400">Mumbai</span>
             </h1>
             <p className="text-xl sm:text-2xl text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
@@ -258,7 +260,7 @@ function App() {
               <div className="bg-gradient-to-r from-blue-50 to-orange-50 p-8 rounded-2xl">
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Story</h3>
                 <p className="text-gray-600 leading-relaxed mb-4">
-                  With over 15 years of experience in the logistics industry, we are Mumbai's most trusted packers and movers, committed to providing seamless relocation services across India.
+                  With over 15 years of experience in the logistics industry, we are Mumbai&apos;s most trusted packers and movers, committed to providing seamless relocation services across India.
                 </p>
                 <p className="text-gray-600 leading-relaxed">
                   Our team of trained professionals ensures that every move is handled with utmost care and precision, making your relocation experience stress-free and efficient.
@@ -281,7 +283,7 @@ function App() {
             
             <div className="space-y-6">
               <div className="bg-gradient-to-r from-orange-50 to-blue-50 p-8 rounded-2xl">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Why We're Different</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">Why We&apos;re Different</h3>
                 <div className="space-y-4">
                   {[
                     "99% customer satisfaction rate with zero damage guarantee",
@@ -346,9 +348,11 @@ function App() {
             ].map((item, index) => (
               <div key={index} className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
                 <div className="aspect-w-16 aspect-h-12 bg-gray-200">
-                  <img
+                  <Image
                     src={item.image}
                     alt={item.title}
+                    width={500}
+                    height={300}
                     className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                 </div>
@@ -417,7 +421,7 @@ function App() {
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Get in Touch</h2>
             <p className="text-xl text-gray-600">
-              Ready to move? Fill out the form below and we'll get back to you instantly
+              Ready to move? Fill out the form below and we&apos;ll get back to you instantly
             </p>
           </div>
           
@@ -512,7 +516,7 @@ function App() {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Mumbai Packers & Movers Location"
+                  title="Mumbai Packers &amp; Movers Location"
                 ></iframe>
               </div>
             </div>
@@ -526,7 +530,7 @@ function App() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">What Our Customers Say</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Don't just take our word for it - hear from our satisfied customers
+              Don&apos;t just take our word for it - hear from our satisfied customers
             </p>
           </div>
           
@@ -557,7 +561,7 @@ function App() {
                     <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
                   ))}
                 </div>
-                <p className="text-gray-600 leading-relaxed mb-6 italic">"{testimonial.quote}"</p>
+                <p className="text-gray-600 leading-relaxed mb-6 italic">&quot;{testimonial.quote}&quot;</p>
                 <div className="border-t pt-4">
                   <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
                   <p className="text-gray-500 text-sm flex items-center gap-1">
@@ -656,5 +660,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
